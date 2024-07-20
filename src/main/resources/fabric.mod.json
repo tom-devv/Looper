@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "looper",
+  "version": "${version}",
+  "name": "Looper",
+  "description": "loop commands",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/looper/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.tom.looper.client.LooperClient"
+    ],
+    "main": [
+      "dev.tom.looper.Looper"
+    ]
+  },
+  "mixins": [
+    "looper.mixins.json",
+    {
+      "config": "looper.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
