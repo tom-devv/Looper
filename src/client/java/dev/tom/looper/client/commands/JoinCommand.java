@@ -20,6 +20,8 @@ public class JoinCommand {
         return ClientCommandManager.literal("join")
                 .executes(context -> {
                     ServerInfo info = new ServerInfo("OctanePvP", "play.octanepvp.com", ServerInfo.ServerType.OTHER);
+                    MinecraftClient mc = MinecraftClient.getInstance();
+                    mc.disconnect();
                     ConnectScreen.connect(null, MinecraftClient.getInstance(), ServerAddress.parse("play.octanepvp.com"), info, false, null);
                     return 1;
                 });
